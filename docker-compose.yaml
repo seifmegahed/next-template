@@ -1,0 +1,14 @@
+services:
+  postgres:
+    env_file:
+      - path: .env
+        required: true
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+    volumes:
+      - ./local-storage/pgdata:${DOCKER_LOCAL_VOLUME_PATH}

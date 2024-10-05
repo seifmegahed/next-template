@@ -9,11 +9,14 @@
     "url": "https://github.com/seifmegahed"
   },
   "scripts": {
-    "build": "next build",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
+    "db:start": "./local-database.sh start",
+    "db:stop": "./local-database.sh stop",
+    "db:cleanup": "./local-database.sh cleanup",
+    "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
